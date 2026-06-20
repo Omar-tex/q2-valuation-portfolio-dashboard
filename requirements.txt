@@ -1,0 +1,6 @@
+# Optional Python stack if extending the project with a FastAPI data service.
+fastapi>=0.111.0
+uvicorn>=0.30.0
+pandas>=2.2.0
+numpy>=1.26.0
+yfinance>=0.2.40
