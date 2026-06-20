@@ -46,7 +46,7 @@ Suggested README preview syntax after screenshots are added:
 - Q2 Holdings Investor Relations: https://investors.q2.com/
 - Q2 Holdings SEC filing page: https://www.sec.gov/edgar/browse/?CIK=1410384
 - SEC EDGAR Search: https://www.sec.gov/edgar/search/
-- U.S. Treasury Interest Rate Statistics: https://home.treasury.gov/resource-center/data-chart-center/interest-rates
+- U.S. Treasury Interest Rate Statistics: https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics
 - FRED CPIAUCSL page: https://fred.stlouisfed.org/series/CPIAUCSL
 - Yahoo Finance market prices: https://finance.yahoo.com/quote/QTWO/
 

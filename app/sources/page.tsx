@@ -5,7 +5,10 @@ const humanSources = [
   ["Q2 Holdings Investor Relations", DATA_SOURCES.q2InvestorRelations],
   ["Q2 Holdings SEC Filing Page", DATA_SOURCES.q2FilingPage],
   ["SEC EDGAR Search", "https://www.sec.gov/edgar/search/"],
-  ["U.S. Treasury Interest Rate Statistics", "https://home.treasury.gov/resource-center/data-chart-center/interest-rates"],
+  [
+    "U.S. Treasury Interest Rate Statistics",
+    "https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics"
+  ],
   ["FRED CPIAUCSL page", "https://fred.stlouisfed.org/series/CPIAUCSL"],
   ["Yahoo Finance market prices", "https://finance.yahoo.com/quote/QTWO/"]
 ];
