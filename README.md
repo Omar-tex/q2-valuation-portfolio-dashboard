@@ -41,13 +41,24 @@ Suggested README preview syntax after screenshots are added:
 
 ## Data Sources
 
-- SEC EDGAR Company Facts: https://data.sec.gov/api/xbrl/companyfacts/CIK0001410384.json
-- SEC EDGAR Submissions: https://data.sec.gov/submissions/CIK0001410384.json
-- Q2 Holdings SEC filing page: https://www.sec.gov/edgar/browse/?CIK=1410384
+### Human-readable sources
+
 - Q2 Holdings Investor Relations: https://investors.q2.com/
-- U.S. Treasury Interest Rate Statistics: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026
-- FRED CPIAUCSL: https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL
-- yfinance/Yahoo chart endpoint for historical market price data
+- Q2 Holdings SEC filing page: https://www.sec.gov/edgar/browse/?CIK=1410384
+- SEC EDGAR Search: https://www.sec.gov/edgar/search/
+- U.S. Treasury Interest Rate Statistics: https://home.treasury.gov/resource-center/data-chart-center/interest-rates
+- FRED CPIAUCSL page: https://fred.stlouisfed.org/series/CPIAUCSL
+- Yahoo Finance market prices: https://finance.yahoo.com/quote/QTWO/
+
+### Technical data endpoints used by this project
+
+These links may open raw JSON, XML, or CSV data. They are included for transparency because the dashboard uses them for live data collection.
+
+- SEC Company Facts API: https://data.sec.gov/api/xbrl/companyfacts/CIK0001410384.json
+- SEC Submissions API: https://data.sec.gov/submissions/CIK0001410384.json
+- Treasury XML feed: https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026
+- FRED CPI CSV endpoint: https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL
+- Yahoo chart endpoint / market price provider: https://query1.finance.yahoo.com/v8/finance/chart
 
 Every live-data page shows the source, last updated timestamp, and whether the dashboard is using live data or fallback sample data.
 
