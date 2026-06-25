@@ -44,7 +44,7 @@ export default async function DcfPage() {
         <WarningBanner warnings={[...company.warnings, ...macro.warnings]} />
         <DataStatus
           source="SEC EDGAR, U.S. Treasury, and market price data provider"
-          href={DATA_SOURCES.secCompanyFacts}
+          href={DATA_SOURCES.q2FilingPage}
           updated={company.lastUpdated}
           live={company.live && macro.live && Boolean(price)}
           note="Financial statement inputs come from SEC data; the risk-free rate comes from Treasury data; current share price uses the market price data provider."

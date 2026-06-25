@@ -26,7 +26,7 @@ export default async function MacroPage() {
         <WarningBanner warnings={macro.warnings} />
         <DataStatus
           source="U.S. Treasury Interest Rate Statistics and FRED CPIAUCSL"
-          href={DATA_SOURCES.treasuryXml}
+          href={DATA_SOURCES.treasuryInterestRateStats}
           updated={macro.lastUpdated}
           live={macro.live}
           note="Macro inputs are used to contextualize discount rates and inflation conditions around the valuation."
@@ -42,12 +42,12 @@ export default async function MacroPage() {
         <div className="panel p-5">
           <h2 className="text-lg font-bold text-ink">Treasury Yield Trend</h2>
           <MacroChart data={macro.treasuryTrend} kind="rates" />
-          <SourceNote source="U.S. Treasury Interest Rate Statistics" href={DATA_SOURCES.treasuryXml} updated={macro.lastUpdated} live={macro.live} />
+          <SourceNote source="U.S. Treasury Interest Rate Statistics" href={DATA_SOURCES.treasuryInterestRateStats} updated={macro.lastUpdated} live={macro.live} />
         </div>
         <div className="panel p-5">
           <h2 className="text-lg font-bold text-ink">CPI Trend</h2>
           <MacroChart data={macro.cpiTrend} kind="cpi" />
-          <SourceNote source="FRED CPIAUCSL" href={DATA_SOURCES.fredCpiCsv} updated={macro.lastUpdated} live={macro.live} />
+          <SourceNote source="FRED CPIAUCSL" href={DATA_SOURCES.fredCpiPage} updated={macro.lastUpdated} live={macro.live} />
         </div>
       </div>
       <div className="panel mt-6 p-5">

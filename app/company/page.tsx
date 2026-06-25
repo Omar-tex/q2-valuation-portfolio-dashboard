@@ -30,7 +30,7 @@ export default async function CompanyPage() {
         <WarningBanner warnings={snapshot.warnings} />
         <DataStatus
           source="SEC EDGAR Company Facts and Submissions"
-          href={DATA_SOURCES.secCompanyFacts}
+          href={DATA_SOURCES.q2FilingPage}
           updated={snapshot.lastUpdated}
           live={snapshot.live}
           note="Company financial facts are pulled server-side from SEC EDGAR and normalized into dashboard line items."
@@ -91,7 +91,7 @@ export default async function CompanyPage() {
             </tbody>
           </table>
         </div>
-        <SourceNote source="SEC EDGAR Company Facts" href={DATA_SOURCES.secCompanyFacts} updated={snapshot.lastUpdated} live={snapshot.live} />
+        <SourceNote source="SEC EDGAR Company Facts" href={DATA_SOURCES.q2FilingPage} updated={snapshot.lastUpdated} live={snapshot.live} />
         {snapshot.latestFiling ? (
           <a className="mt-2 inline-block text-sm font-bold text-financeBlue hover:underline" href={snapshot.latestFiling.url} target="_blank" rel="noreferrer">
             Latest filing link

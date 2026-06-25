@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { DashboardCard } from "@/components/DashboardCard";
 import { DrawdownChart, MonthlyReturnsChart, PortfolioChart } from "@/components/DashboardCharts";
 import { SourceNote } from "@/components/SourceNote";
-import { DEFAULT_WEIGHTS, PEER_TICKERS } from "@/lib/constants";
+import { DATA_SOURCES, DEFAULT_WEIGHTS, PEER_TICKERS } from "@/lib/constants";
 import { formatPercent } from "@/lib/format";
 import type { PortfolioBacktest } from "@/lib/types";
 
@@ -16,6 +16,7 @@ export function PortfolioDashboard({ backtest }: { backtest: PortfolioBacktest }
     const last = backtest.series[backtest.series.length - 1]?.spy ?? first;
     return last / first - 1;
   }, [backtest.series]);
+  const marketProviderHref = backtest.provider === "Yahoo" ? DATA_SOURCES.yahooFinanceQtWo : undefined;
 
   return (
     <div className="grid gap-6">
@@ -70,6 +71,7 @@ export function PortfolioDashboard({ backtest }: { backtest: PortfolioBacktest }
           <PortfolioChart data={backtest.series} />
           <SourceNote
             source={`Market price data provider: ${backtest.provider}`}
+            href={marketProviderHref}
             updated={backtest.lastUpdated}
             live={backtest.live}
             liveLabel="Using live market data"

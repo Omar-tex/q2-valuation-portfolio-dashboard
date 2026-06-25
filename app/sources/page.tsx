@@ -4,21 +4,18 @@ import { Disclaimer } from "@/components/Disclaimer";
 const humanSources = [
   ["Q2 Holdings Investor Relations", DATA_SOURCES.q2InvestorRelations],
   ["Q2 Holdings SEC Filing Page", DATA_SOURCES.q2FilingPage],
-  ["SEC EDGAR Search", "https://www.sec.gov/edgar/search/"],
-  [
-    "U.S. Treasury Interest Rate Statistics",
-    "https://home.treasury.gov/policy-issues/financing-the-government/interest-rate-statistics"
-  ],
-  ["FRED CPIAUCSL page", "https://fred.stlouisfed.org/series/CPIAUCSL"],
-  ["Yahoo Finance market prices", "https://finance.yahoo.com/quote/QTWO/"]
+  ["SEC EDGAR Search", "https://www.sec.gov/search-filings"],
+  ["U.S. Treasury Interest Rate Statistics", DATA_SOURCES.treasuryInterestRateStats],
+  ["FRED CPIAUCSL page", DATA_SOURCES.fredCpiPage],
+  ["Yahoo Finance market prices", DATA_SOURCES.yahooFinanceQtWo]
 ];
 
 const technicalEndpoints = [
   ["SEC Company Facts API", DATA_SOURCES.secCompanyFacts],
   ["SEC Submissions API", DATA_SOURCES.secSubmissions],
-  ["Treasury XML feed", DATA_SOURCES.treasuryXml],
+  ["Treasury XML feed", "https://home.treasury.gov/treasury-daily-interest-rate-xml-feed"],
   ["FRED CPI CSV endpoint", DATA_SOURCES.fredCpiCsv],
-  ["Yahoo chart endpoint / market price provider", DATA_SOURCES.yahooChart]
+  ["Yahoo market price provider", DATA_SOURCES.yahooFinanceQtWo]
 ];
 
 export default function SourcesPage() {
@@ -57,7 +54,7 @@ export default function SourcesPage() {
           {technicalEndpoints.map(([label, href]) => (
             <a
               key={label}
-              className="rounded border border-slateLine bg-slate-50 px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-mist sm:text-sm"
+              className="rounded border border-slateLine bg-slate-50 px-4 py-2 text-xs font-semibold text-financeBlue underline-offset-2 hover:bg-mist hover:underline sm:text-sm"
               href={href}
               target="_blank"
               rel="noreferrer"

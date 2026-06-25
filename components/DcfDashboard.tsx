@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { DashboardCard } from "@/components/DashboardCard";
 import { RevenueFcfChart, ValueBridgeChart } from "@/components/DashboardCharts";
 import { SourceNote } from "@/components/SourceNote";
+import { DATA_SOURCES } from "@/lib/constants";
 import { formatCurrency, formatPercent } from "@/lib/format";
 import { runDcf } from "@/lib/models/dcf";
 import type { DcfAssumptions } from "@/lib/types";
@@ -76,7 +77,7 @@ export function DcfDashboard({
           <div className="panel p-5">
             <h2 className="text-lg font-bold text-ink">Revenue and FCF Forecast</h2>
             <RevenueFcfChart data={result.rows} />
-            <SourceNote source="SEC EDGAR, Treasury, and model assumptions" updated={updated} live={live} />
+            <SourceNote source="SEC EDGAR, Treasury, and model assumptions" href={DATA_SOURCES.q2FilingPage} updated={updated} live={live} />
           </div>
           <div className="panel p-5">
             <h2 className="text-lg font-bold text-ink">DCF Value Bridge</h2>

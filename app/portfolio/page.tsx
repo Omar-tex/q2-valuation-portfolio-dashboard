@@ -2,10 +2,12 @@ import { DataStatus } from "@/components/DataStatus";
 import { Disclaimer } from "@/components/Disclaimer";
 import { PortfolioDashboard } from "@/components/PortfolioDashboard";
 import { WarningBanner } from "@/components/WarningBanner";
+import { DATA_SOURCES } from "@/lib/constants";
 import { getPortfolioBacktest } from "@/lib/data/market";
 
 export default async function PortfolioPage() {
   const backtest = await getPortfolioBacktest();
+  const marketProviderHref = backtest.provider === "Yahoo" ? DATA_SOURCES.yahooFinanceQtWo : undefined;
   return (
     <section className="page-shell py-10">
       <p className="section-kicker">Portfolio Analysis + Backtesting</p>
@@ -18,6 +20,7 @@ export default async function PortfolioPage() {
         <WarningBanner warnings={backtest.warnings} />
         <DataStatus
           source={`Market price data provider: ${backtest.provider}`}
+          href={marketProviderHref}
           updated={backtest.lastUpdated}
           live={backtest.live}
           liveLabel="Using live market data"

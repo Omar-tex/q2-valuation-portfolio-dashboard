@@ -20,7 +20,7 @@ export default async function SecDataPage() {
         <WarningBanner warnings={snapshot.warnings} />
         <DataStatus
           source="SEC EDGAR Company Facts and Submissions"
-          href={DATA_SOURCES.secSubmissions}
+          href={DATA_SOURCES.q2FilingPage}
           updated={snapshot.lastUpdated}
           live={snapshot.live}
           note="All SEC requests are made server-side with the required SEC User-Agent header."
@@ -49,7 +49,7 @@ export default async function SecDataPage() {
             </tbody>
           </table>
         </div>
-        <SourceNote source="SEC EDGAR Company Facts" href={DATA_SOURCES.secCompanyFacts} updated={snapshot.lastUpdated} live={snapshot.live} />
+        <SourceNote source="SEC EDGAR Company Facts" href={DATA_SOURCES.q2FilingPage} updated={snapshot.lastUpdated} live={snapshot.live} />
       </div>
 
       <div className="panel mt-6 p-5">
@@ -60,7 +60,7 @@ export default async function SecDataPage() {
           <p><strong>Report Date:</strong> {snapshot.latestFiling?.reportDate ?? "N/A"}</p>
           <p><strong>Accession:</strong> {snapshot.latestFiling?.accessionNumber ?? "N/A"}</p>
         </div>
-        <SourceNote source="SEC EDGAR Submissions" href={DATA_SOURCES.secSubmissions} updated={snapshot.lastUpdated} live={snapshot.live} />
+        <SourceNote source="SEC EDGAR Submissions" href={DATA_SOURCES.q2FilingPage} updated={snapshot.lastUpdated} live={snapshot.live} />
       </div>
       <div className="mt-6">
         <Disclaimer />
