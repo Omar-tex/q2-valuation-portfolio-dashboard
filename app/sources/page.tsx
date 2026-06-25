@@ -11,11 +11,11 @@ const humanSources = [
 ];
 
 const technicalEndpoints = [
-  ["SEC Company Facts API", DATA_SOURCES.secCompanyFacts],
-  ["SEC Submissions API", DATA_SOURCES.secSubmissions],
-  ["Treasury XML feed", "https://home.treasury.gov/treasury-daily-interest-rate-xml-feed"],
-  ["FRED CPI CSV endpoint", DATA_SOURCES.fredCpiCsv],
-  ["Yahoo market price provider", DATA_SOURCES.yahooFinanceQtWo]
+  ["View raw SEC Company Facts API", DATA_SOURCES.secCompanyFacts],
+  ["View raw SEC Submissions API", DATA_SOURCES.secSubmissions],
+  ["View raw Treasury XML Feed", "https://home.treasury.gov/treasury-daily-interest-rate-xml-feed"],
+  ["View raw FRED CPI CSV", DATA_SOURCES.fredCpiCsv],
+  ["View Yahoo Finance Price History", DATA_SOURCES.yahooFinanceQtWo]
 ];
 
 export default function SourcesPage() {
@@ -39,22 +39,25 @@ export default function SourcesPage() {
         </div>
       </div>
 
-      <div className="panel mt-6 p-5">
+      <div className="panel mt-6 border-slateLine bg-slate-50/70 p-5">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-lg font-bold text-ink">Technical data endpoints used by this project</h2>
-          <span className="rounded bg-slate-100 px-3 py-1 text-xs font-bold uppercase text-slate-600">
-            Raw API endpoint
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-slate-500">Developer / raw data links</p>
+            <h2 className="mt-1 text-lg font-bold text-ink">Technical data endpoints used by this project</h2>
+          </div>
+          <span className="rounded bg-slate-200 px-3 py-1 text-xs font-bold uppercase text-slate-700">
+            Raw data documentation
           </span>
         </div>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-          These links may open raw JSON, XML, or CSV data. They are included for transparency because the dashboard
-          uses them for live data collection.
+          These are raw data endpoints used by the dashboard’s backend. They may open JSON, XML, or CSV files in the
+          browser. They are included for transparency and are not intended to be normal reading pages.
         </p>
         <div className="mt-4 grid gap-2">
           {technicalEndpoints.map(([label, href]) => (
             <a
               key={label}
-              className="rounded border border-slateLine bg-slate-50 px-4 py-2 text-xs font-semibold text-financeBlue underline-offset-2 hover:bg-mist hover:underline sm:text-sm"
+              className="rounded border border-dashed border-slate-300 bg-white/70 px-4 py-2 font-mono text-xs font-semibold text-slate-700 underline-offset-2 hover:border-financeBlue hover:bg-white hover:text-financeBlue hover:underline sm:text-sm"
               href={href}
               target="_blank"
               rel="noreferrer"
